@@ -5,25 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>GPA Calculator</title>
 </head>
 <body>
     <h1>GPA calculator</h1>
     <div>
-        <label for="">out of 100</label>
-    <form action="">
-        <div>
-     <label for="">history grade</label>
-        <input type="number" id="inputs">
-        <label for="">Math grade</label>
-        <input type="number" id="inputs">
-        <label for="">English grade</label>
-        <input type="number" id="inputs">
-        <label for="">Science grades</label>
-        <input type="number" id="inputs">
-        <input type="submit" value="Calculate" id="">
-    </div>
+        <label for="outOf">Out of 100</label>
+        <form id="gpaForm">
+            <div>
+                <label for="historyGrade">History grade</label>
+                <input type="number" id="historyGrade">
+                <label for="mathGrade">Math grade</label>
+                <input type="number" id="mathGrade">
+                <label for="englishGrade">English grade</label>
+                <input type="number" id="englishGrade">
+                <label for="scienceGrade">Science grade</label>
+                <input type="number" id="scienceGrade">
+                <input type="button" value="Calculate" onclick="calculateGPA()">
+            </div>
         </form>
+        <div id="resultContainer"></div>
     </div>
     <script src="doc.js"></script>
 </body>
