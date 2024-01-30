@@ -10,18 +10,17 @@
 <body>
     <h1>GPA calculator</h1>
     <div>
-        <label for="outOf">Out of 100</label>
         <form id="gpaForm">
             <div>
-                <label for="historyGrade">History grade</label>
-                <input type="number" id="historyGrade">
-                <label for="mathGrade">Math grade</label>
-                <input type="number" id="mathGrade">
-                <label for="englishGrade">English grade</label>
-                <input type="number" id="englishGrade">
-                <label for="scienceGrade">Science grade</label>
-                <input type="number" id="scienceGrade">
-                <input type="button" value="Calculate" onclick="calculateGPA()">
+                <label for="historyGrade">History grade (out of 100)</label>
+                <input type="number" id="historyGrade" min="0" max="100">
+                <label for="mathGrade">Math grade (out of 100)</label>
+                <input type="number" id="mathGrade" min="0" max="100">
+                <label for="englishGrade">English grade (out of 100)</label>
+                <input type="number" id="englishGrade" min="0" max="100">
+                <label for="scienceGrade">Science grade (out of 100)</label>
+                <input type="number" id="scienceGrade" min="0" max="100">
+                <input type="button" value="Calculate" id="calculate">
             </div>
         </form>
         <div id="resultContainer"></div>
