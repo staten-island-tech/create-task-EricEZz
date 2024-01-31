@@ -1,18 +1,17 @@
-// function calculateGPA() {
-//         // Get the input values
-//         const historyGrade = parseFloat(document.getElementById('historyGrade').value) || 0;
-//         const mathGrade = parseFloat(document.getElementById('mathGrade').value) || 0;
-//         const englishGrade = parseFloat(document.getElementById('englishGrade').value) || 0;
-//         const scienceGrade = parseFloat(document.getElementById('scienceGrade').value) || 0;
-    
-//         // Calculate the total and average
-//         const total = historyGrade + mathGrade + englishGrade + scienceGrade;
-//         const average = total / 4;
-    
-//         // Display the result in the resultContainer
-//         const resultContainer = document.getElementById('resultContainer');
-//         resultContainer.innerHTML = `<p>GPA: ${average.toFixed(2)}</p>`;
-//     }
+const DomSelectors = {
+    history: document.getElementById("historyGrade"),
+    science: document.getElementById("scienceGrade"),
+    english: document.getElementById("englishGrade"),
+    math: document.getElementById("mathGrade")
+}
+
+function calculateGPA(){
+    const total = (historyGrade) + (mathGrade) + (englishGrade) + (scienceGrade);
+    const average = total/4; 
+    return average; 
+}
+
+
 // function calculateGPA() {
 //     // Get the input values as strings
 //     const historyGrade = document.getElementById('historyGrade').value.trim();
