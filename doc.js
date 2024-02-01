@@ -2,14 +2,25 @@ const DomSelectors = {
     history: document.getElementById("historyGrade"),
     science: document.getElementById("scienceGrade"),
     english: document.getElementById("englishGrade"),
-    math: document.getElementById("mathGrade")
+    math: document.getElementById("mathGrade"),
+    resultContainer: document.getElementById("resultContainer")
 }
 
-function calculateGPA(){
-    const total = (historyGrade) + (mathGrade) + (englishGrade) + (scienceGrade);
-    const average = total/4; 
-    return average; 
+function calculateGPA() {
+    const historyGrade = +DomSelectors.history.value || 0;
+    const mathGrade = +DomSelectors.math.value || 0;
+    const englishGrade = +DomSelectors.english.value || 0;
+    const scienceGrade = +DomSelectors.science.value || 0;
+
+    const total = historyGrade + mathGrade + englishGrade + scienceGrade;
+    const average = total / 4;
+
+    // Display the average in the result container
+    DomSelectors.resultContainer.textContent = `Your GPA is: ${average.toFixed(2)}`;
 }
+
+// Attach the calculateGPA function to the click event of the Calculate button
+document.getElementById("calculate").addEventListener("click", calculateGPA);
 
 
 // function calculateGPA() {
