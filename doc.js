@@ -1,21 +1,57 @@
-const DomSelectors = {
+const DOMSelectors = {
     history: document.getElementById("historyGrade"),
     science: document.getElementById("scienceGrade"),
     english: document.getElementById("englishGrade"),
-    math: document.getElementById("mathGrade")
+    math: document.getElementById("mathGrade"),
+    container: document.querySelector(".container"),
+    button: document.querySelector(".calculate")
 };
 
+function clear(){
+    DOMSelectors.container.innerHTML= "";
+}
+
+DOMSelectors.button.addEventlistener("click", function(event){
+    event.preventDefault();
+    clear();
+    calculateGPA();
+})
 function calculateGPA(){
-    const total = (historyGrade) + (mathGrade) + (englishGrade) + (scienceGrade);
+    const total = (historyGrade.value) + (mathGrade.value) + (englishGrade.value) + (scienceGrade.value);
     const average = total/4; 
-    DomSelectors.container.insertAdjacentHTML(
-        "beforeend"
+    DOMSelectors.container.insertAdjacentHTML(
+        "beforeend",
         `<div id="resultsContainer">
-        <h1></h1>
+        <h1>Your GPA is:${average}</h1>
         </div> `)
     return average; 
 }
-calculateGPA();
+
+
+//const DomSelectors = {
+//     history: document.getElementById("historyGrade"),
+//     science: document.getElementById("scienceGrade"),
+//     english: document.getElementById("englishGrade"),
+//     math: document.getElementById("mathGrade"),
+//     resultContainer: document.getElementById("resultContainer")
+// }
+
+// function calculateGPA() {
+//     const historyGrade = +DomSelectors.history.value || 0;
+//     const mathGrade = +DomSelectors.math.value || 0;
+//     const englishGrade = +DomSelectors.english.value || 0;
+//     const scienceGrade = +DomSelectors.science.value || 0;
+
+//     const total = historyGrade + mathGrade + englishGrade + scienceGrade;
+//     const average = total / 4;
+
+//     // Display the average in the result container
+//     DomSelectors.resultContainer.textContent = `Your GPA is: ${average.toFixed(2)}`;
+// }
+
+// // Attach the calculateGPA function to the click event of the Calculate button
+// document.getElementById("calculate").addEventListener("click", calculateGPA);
+
 
 // function calculateGPA() {
 //     // Get the input values as strings
@@ -49,5 +85,3 @@ calculateGPA();
 /* function isValidNumber(value) {
     const numberValue = Number(value);
     return !isNaN(numberValue) && numberValue >= 0 && numberValue <= 100; }*/
-
-
