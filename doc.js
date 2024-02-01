@@ -3,14 +3,19 @@ const DomSelectors = {
     science: document.getElementById("scienceGrade"),
     english: document.getElementById("englishGrade"),
     math: document.getElementById("mathGrade")
-}
+};
 
 function calculateGPA(){
     const total = (historyGrade) + (mathGrade) + (englishGrade) + (scienceGrade);
     const average = total/4; 
+    DomSelectors.container.insertAdjacentHTML(
+        "beforeend"
+        `<div id="resultsContainer">
+        <h1></h1>
+        </div> `)
     return average; 
 }
-
+calculateGPA();
 
 // function calculateGPA() {
 //     // Get the input values as strings
