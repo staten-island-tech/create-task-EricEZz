@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const historyGrade = document.getElementById('historyGrade').value || 0;
         const mathGrade = document.getElementById('mathGrade').value || 0;
         const englishGrade = document.getElementById('englishGrade').value || 0;
-        const scienceGrade = document.getElementById(‘scienceGrade’).value || 0;
+        const scienceGrade = document.getElementById('scienceGrade').value || 0;
 
         const totalCredits = 4; // Assuming each subject has equal weight
         const totalPoints = +historyGrade + +mathGrade + +englishGrade + +scienceGrade; // The unary plus converts strings to numbers
