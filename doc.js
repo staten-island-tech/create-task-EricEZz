@@ -7,7 +7,6 @@ function calculateGPA() {
     const totalCredits = 4; 
     const totalPoints = historyGrade + mathGrade + englishGrade + scienceGrade;
     const gpa = totalPoints / totalCredits;
-
     const resultContainer = document.getElementById('resultContainer');
     resultContainer.innerHTML = `<p>Your GPA is: ${gpa.toFixed(2)}</p>`;
 }
